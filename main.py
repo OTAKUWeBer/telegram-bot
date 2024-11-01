@@ -28,7 +28,7 @@ def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
 
     if content_type == 'text':
-        command = msg['text'].strip()
+        command = msg['text'].strip().lower()  # Normalize command to lowercase
         
         if command.startswith('yt '):
             url = command[3:]  # Extract the URL after "yt "
