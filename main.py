@@ -29,8 +29,9 @@ def handle(msg):
 
     if content_type == 'text':
         command = msg['text'].strip()
+        command_lower = command.lower()  # Convert only for comparison
         
-        if command.startswith('yt '):
+        if command_lower.startswith('yt '):
             url = command[3:]  # Extract the URL after "yt "
             bot.sendMessage(chat_id, "Extracting YouTube video link...")
             try:
@@ -39,7 +40,7 @@ def handle(msg):
             except Exception as e:
                 bot.sendMessage(chat_id, f"An error occurred: {str(e)}")
         
-        elif command.startswith('fb '):
+        elif command_lower.startswith('fb '):
             url = command[3:]  # Extract the URL after "fb "
             bot.sendMessage(chat_id, "Extracting Facebook video link...")
             try:
@@ -48,7 +49,7 @@ def handle(msg):
             except Exception as e:
                 bot.sendMessage(chat_id, f"An error occurred: {str(e)}")
         
-        elif command.startswith('ig '):
+        elif command_lower.startswith('ig '):
             url = command[3:]  # Extract the URL after "ig "
             bot.sendMessage(chat_id, "Extracting Instagram video link...")
             try:
