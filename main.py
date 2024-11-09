@@ -20,9 +20,7 @@ def extract_video_url(url):
         video_url = info.get('url')  # Extract the direct video URL
         title = info.get('title', 'Video')
         return video_url, title
-    
-def anime_search():
-    
+
 
 def handle(msg):
     username = msg.get('from', {}).get('username', 'Unknown')
