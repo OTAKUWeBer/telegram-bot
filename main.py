@@ -2,6 +2,9 @@ import telepot
 import yt_dlp
 from time import sleep
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Use Your BOT token here
 TOKEN = os.getenv('BOT_TOKEN')  # Replace "os.getenv('BOT_TOKEN')" with your actual bot token
@@ -17,6 +20,9 @@ def extract_video_url(url):
         video_url = info.get('url')  # Extract the direct video URL
         title = info.get('title', 'Video')
         return video_url, title
+    
+def anime_search():
+    
 
 def handle(msg):
     username = msg.get('from', {}).get('username', 'Unknown')
